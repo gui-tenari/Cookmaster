@@ -1,6 +1,7 @@
 const errorCodes = {
   invalidData: 400,
   conflictData: 409,
+  unauthorized: 401,
 };
 
 const errorHandler = async (err, req, res, _next) => {

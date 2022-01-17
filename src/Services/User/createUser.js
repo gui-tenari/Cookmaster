@@ -1,15 +1,14 @@
-const UsersModels = require('../../Models/User/UserModels');
+const userModels = require('../../Models/User/index');
 
 const createUser = async (name, email, password, role) => {
-  const foundUser = await UsersModels.findUserByEmail(email);
-  console.log(foundUser);
+  const foundUser = await userModels.findUserByEmail(email);
   if (foundUser) {
     return {
       code: 'conflictData',
       message: 'Email already registered',
     };
   } 
-  const newUser = await UsersModels.createUser(name, email, password, role);
+  const newUser = await userModels.createUser(name, email, password, role);
   return newUser;
 };
 
