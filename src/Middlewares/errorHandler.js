@@ -2,6 +2,7 @@ const errorCodes = {
   invalidData: 400,
   conflictData: 409,
   unauthorized: 401,
+  serverError: 500,
 };
 
 const errorHandler = async (err, req, res, _next) => {
