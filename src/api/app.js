@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const userRouter = require('../Routes/userRouter');
 const loginRouter = require('../Routes/loginRouter');
+const recipesRouter = require('../Routes/recipesRouter');
 const errorHandler = require('../Middlewares/errorHandler');
 
 const app = express();
@@ -10,6 +11,7 @@ app.use(bodyParser.json());
 
 app.use('/users', userRouter);
 app.use('/login', loginRouter);
+app.use('/recipes', recipesRouter);
 
 app.use(errorHandler);
 
