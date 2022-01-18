@@ -1,7 +1,8 @@
 const { createRecipe } = require('./createRecipe');
-const { getAllRecipes } = require('./getAllRecipes');
+const { getAllRecipes, getRecipeById } = require('./getRecipes');
 
 module.exports = {
   createRecipe,
   getAllRecipes,
+  getRecipeById,
 };

@@ -1,7 +1,8 @@
 const errorCodes = {
   invalidData: 400,
-  conflictData: 409,
   unauthorized: 401,
+  notFound: 404,
+  conflictData: 409,
   serverError: 500,
 };
 
