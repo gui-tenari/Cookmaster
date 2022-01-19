@@ -10,11 +10,11 @@ const login = async (insertedEmail, insertedPassword) => {
   if (!foundUser) {
     return error;
   }
-  const { password, email, role, name } = foundUser;
+  const { password, email, role, name, _id } = foundUser;
   if (password !== insertedPassword) {
     return error;
   }
-  return createToken({ name, email, role });
+  return createToken({ _id, name, email, role });
 };
 
 module.exports = {

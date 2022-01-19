@@ -11,7 +11,7 @@ const decodeToken = (token) => {
         message: 'jwt malformed',
       };
     }
-    return userInfos.email;
+    return userInfos;
   } catch (error) {
     console.log(error);
   }
