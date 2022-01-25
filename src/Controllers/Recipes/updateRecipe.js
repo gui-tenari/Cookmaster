@@ -16,10 +16,9 @@ const updateRecipe = async (req, res, next) => {
 
 const updatedRecipeWithImage = async (req, res, next) => {
   const { id } = req.params;
-  const { path } = req.file;
   const { userId, role } = req;
   const updatedRecipe = await RecipesServices.updateRecipeWithImage({
-    recipeId: id, path, userId, role,
+    recipeId: id, userId, role,
   });
   if (updatedRecipe.code) {
     return next(updatedRecipe);

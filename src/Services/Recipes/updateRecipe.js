@@ -21,13 +21,12 @@ const updateRecipe = async (recipeId, data) => {
 };
 
 const updateRecipeWithImage = async (data) => {
-  const { recipeId, userId, role, path } = data;
+  const { recipeId, userId, role } = data;
 
   const recipe = await validateUserAndRecipe(recipeId, userId, role);
   if (recipe.code) return recipe;
-  const url = path.split('cookmaster/')[1];
-  recipe.image = `localhost:3000/${url}`;
-  console.log(recipe);
+  const url = `localhost:3000/src/uploads/${recipeId}.jpeg`;
+  recipe.image = url;
   const recipeWithImage = await RecipesModels.updateRecipeWithImage(recipe);
   return recipeWithImage;
 };
