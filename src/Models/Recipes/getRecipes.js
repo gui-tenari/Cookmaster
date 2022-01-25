@@ -13,7 +13,6 @@ const getAllRecipes = async () => {
 
 const getRecipeById = async (id) => {
   const isValid = ObjectId.isValid(id);
-  
   if (!isValid) return false;
 
   try {

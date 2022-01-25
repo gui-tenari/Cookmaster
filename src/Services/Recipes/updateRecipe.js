@@ -20,4 +20,16 @@ const updateRecipe = async (recipeId, data) => {
   return updatedRecipe;
 };
 
-module.exports = { updateRecipe };
+const updateRecipeWithImage = async (data) => {
+  const { recipeId, userId, role, path } = data;
+
+  const recipe = await validateUserAndRecipe(recipeId, userId, role);
+  if (recipe.code) return recipe;
+  const url = path.split('cookmaster/')[1];
+  recipe.image = `localhost:3000/${url}`;
+  console.log(recipe);
+  const recipeWithImage = await RecipesModels.updateRecipeWithImage(recipe);
+  return recipeWithImage;
+};
+
+module.exports = { updateRecipe, updateRecipeWithImage };

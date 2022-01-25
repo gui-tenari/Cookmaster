@@ -15,4 +15,18 @@ const updateRecipe = async ({ id, name, ingredients, preparation, userId }) => {
   }
 };
 
-module.exports = { updateRecipe };
+const updateRecipeWithImage = async ({
+   _id: id, name, ingredients, preparation, userId, image, 
+  }) => {
+  try {
+    const db = await connection();
+    await db.collection('recipes').updateOne({ _id: ObjectId(id) }, { $set: {
+      image,
+    } });
+    return formatRecipe({ id, name, ingredients, preparation, userId, image });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+module.exports = { updateRecipe, updateRecipeWithImage };

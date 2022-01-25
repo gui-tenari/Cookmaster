@@ -11,7 +11,7 @@ const validateUserAndRecipe = async (recipeId, userId, role) => {
   }
   // user é autorizado
   if (userId === `${recipe.userId}` || role === 'admin') {
-    return true;
+    return recipe;
   }
   return { 
     code: 'unauthorized',

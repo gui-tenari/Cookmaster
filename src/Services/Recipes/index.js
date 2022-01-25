@@ -1,6 +1,6 @@
 const { createRecipe } = require('./createRecipe');
 const { getAllRecipes, getRecipeById } = require('./getRecipes');
-const { updateRecipe } = require('./updateRecipe');
+const { updateRecipe, updateRecipeWithImage } = require('./updateRecipe');
 const { deleteRecipe } = require('./deleteRecipe');
 
 module.exports = {
@@ -8,5 +8,6 @@ module.exports = {
   getAllRecipes,
   getRecipeById,
   updateRecipe,
+  updateRecipeWithImage,
   deleteRecipe,
 };

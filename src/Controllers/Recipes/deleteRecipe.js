@@ -2,7 +2,7 @@ const RecipeServices = require('../../Services/Recipes/deleteRecipe');
 
 const deleteRecipe = async (req, res, next) => {
   const { id } = req.params;
-  const { userId, role } = req.body;
+  const { userId, role } = req;
 
   const deletedRecipe = await RecipeServices.deleteRecipe(id, userId, role);
 
